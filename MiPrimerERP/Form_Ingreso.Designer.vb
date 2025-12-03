@@ -22,6 +22,7 @@ Partial Class Form_Ingreso
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         GroupBox1 = New GroupBox()
         btn_Cancelar = New Button()
         btn_Aceptar = New Button()
@@ -29,8 +30,12 @@ Partial Class Form_Ingreso
         Label1 = New Label()
         txt_Password = New TextBox()
         txt_Usuario = New TextBox()
-        Label_FechaHora = New Label()
+        Timer1 = New Timer(components)
+        StatusStrip1 = New StatusStrip()
+        Label_Fecha = New ToolStripStatusLabel()
+        Label_Hora = New ToolStripStatusLabel()
         GroupBox1.SuspendLayout()
+        StatusStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' GroupBox1
@@ -99,37 +104,58 @@ Partial Class Form_Ingreso
         txt_Usuario.Size = New Size(100, 23)
         txt_Usuario.TabIndex = 0
         ' 
-        ' Label_FechaHora
+        ' Timer1
         ' 
-        Label_FechaHora.AutoSize = True
-        Label_FechaHora.Location = New Point(23, 152)
-        Label_FechaHora.Name = "Label_FechaHora"
-        Label_FechaHora.Size = New Size(71, 15)
-        Label_FechaHora.TabIndex = 1
-        Label_FechaHora.Text = "FechaYHora"
+        Timer1.Interval = 1000
+        ' 
+        ' StatusStrip1
+        ' 
+        StatusStrip1.Items.AddRange(New ToolStripItem() {Label_Fecha, Label_Hora})
+        StatusStrip1.Location = New Point(0, 185)
+        StatusStrip1.Name = "StatusStrip1"
+        StatusStrip1.Size = New Size(267, 22)
+        StatusStrip1.TabIndex = 2
+        StatusStrip1.Text = "StatusStrip1"
+        ' 
+        ' Label_Fecha
+        ' 
+        Label_Fecha.Name = "Label_Fecha"
+        Label_Fecha.Size = New Size(38, 17)
+        Label_Fecha.Text = "Fecha"
+        ' 
+        ' Label_Hora
+        ' 
+        Label_Hora.Name = "Label_Hora"
+        Label_Hora.Size = New Size(33, 17)
+        Label_Hora.Text = "Hora"
         ' 
         ' Form_Ingreso
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(249, 176)
-        Controls.Add(Label_FechaHora)
+        ClientSize = New Size(267, 207)
+        Controls.Add(StatusStrip1)
         Controls.Add(GroupBox1)
         Name = "Form_Ingreso"
         Text = "Mi Primer ERP"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
+        StatusStrip1.ResumeLayout(False)
+        StatusStrip1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label_FechaHora As Label
     Friend WithEvents txt_Usuario As TextBox
     Friend WithEvents txt_Password As TextBox
     Friend WithEvents btn_Cancelar As Button
     Friend WithEvents btn_Aceptar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents Label_Hora As ToolStripStatusLabel
+    Friend WithEvents Label_Fecha As ToolStripStatusLabel
 
 End Class
