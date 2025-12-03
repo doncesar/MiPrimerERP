@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Data.SqlClient
+﻿Imports System.ComponentModel
+Imports Microsoft.Data.SqlClient
 
 Public Class Form_Ingreso
 
@@ -65,4 +66,5 @@ Public Class Form_Ingreso
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Me.Label_Hora.Text = String.Format("{0:HH:mm:ss}", DateTime.Now)
     End Sub
+
 End Class

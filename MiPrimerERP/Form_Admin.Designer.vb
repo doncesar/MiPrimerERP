@@ -22,9 +22,50 @@ Partial Class Form_Admin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form_Admin"
+        MenuStrip1 = New MenuStrip()
+        UsuariosToolStripMenuItem = New ToolStripMenuItem()
+        RegistroDeUsuariosToolStripMenuItem = New ToolStripMenuItem()
+        MenuStrip1.SuspendLayout()
+        SuspendLayout()
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.Items.AddRange(New ToolStripItem() {UsuariosToolStripMenuItem})
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Size = New Size(800, 24)
+        MenuStrip1.TabIndex = 0
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
+        ' UsuariosToolStripMenuItem
+        ' 
+        UsuariosToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {RegistroDeUsuariosToolStripMenuItem})
+        UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        UsuariosToolStripMenuItem.Size = New Size(64, 20)
+        UsuariosToolStripMenuItem.Text = "Usuarios"
+        ' 
+        ' RegistroDeUsuariosToolStripMenuItem
+        ' 
+        RegistroDeUsuariosToolStripMenuItem.Name = "RegistroDeUsuariosToolStripMenuItem"
+        RegistroDeUsuariosToolStripMenuItem.Size = New Size(181, 22)
+        RegistroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios"
+        ' 
+        ' Form_Admin
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(800, 450)
+        Controls.Add(MenuStrip1)
+        MainMenuStrip = MenuStrip1
+        Name = "Form_Admin"
+        Text = "Administración"
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
+
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RegistroDeUsuariosToolStripMenuItem As ToolStripMenuItem
 End Class
